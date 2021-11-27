@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+    <span>Milind i18N App</span>
+    <span class="spacer"></span>
+    <button mat-button class="icon" aria-label="Langular Icon selection" [matMenuTriggerFor]="mnuLang">
+      <mat-icon>language</mat-icon>
+      {{ selectedLanguage }}
+      <mat-icon>arrow_drop_down</mat-icon>
+    </button>   
+
+    <mat-menu #mnuLang="matMenu">
+        <button mat-menu-item *ngFor="let l of langSupport; let i=index" (click)="changeLang(i)">{{l.value}}</button>
+    </mat-menu>
+    
+  </mat-toolbar>
