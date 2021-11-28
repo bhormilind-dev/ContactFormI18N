@@ -4,9 +4,9 @@
             <div class="row m-3">
                 <div class="col">
                     <mat-form-field class="w-100" appearance="outline" color="primary">
-                        <mat-label>Full Name</mat-label>
-                         <input matInput   type="text" formControlName="fullName" placeholder="Full Name">
-                         <mat-error *ngIf="fullName?.errors?.required">Full Name is a required.</mat-error>
+                        <mat-label i18n>Full Name</mat-label>
+                         <input matInput type="text" formControlName="fullName" i18n-placeholder placeholder="Full Name">
+                         <mat-error i18n *ngIf="fullName?.errors?.required">Full Name is a required.</mat-error>
                     </mat-form-field>
                    
                 </div>
@@ -14,18 +14,18 @@
             <div class="row m-3">
                 <div class="col">
                     <mat-form-field class="w-100" appearance="outline">
-                        <mat-label>Age</mat-label>
-                         <input matInput   type="text" formControlName="age" placeholder="Age">
-                         <mat-error *ngIf="age?.errors?.required">Age is a required.</mat-error>
+                        <mat-label i18n>Age</mat-label>
+                         <input matInput type="text" formControlName="age" i18n-placeholder placeholder="Age">
+                         <mat-error i18n *ngIf="age?.errors?.required">Age is a required.</mat-error>
                     </mat-form-field>
                 </div>
             </div>
             <div class="row m-3">
                 <div class="col">
                     <mat-form-field class="w-100" appearance="outline">
-                        <mat-label>Phone Number</mat-label>
-                         <input matInput   type="text" formControlName="phoneNumber" placeholder="Phone Number">
-                         <mat-error *ngIf="phoneNumber?.errors?.required">Phone Number is a required.</mat-error>
+                        <mat-label i18n>Phone Number</mat-label>
+                         <input matInput type="text" formControlName="phoneNumber" i18n-placeholder placeholder="Phone Number">
+                         <mat-error i18n *ngIf="phoneNumber?.errors?.required">Phone Number is a required.</mat-error>
                     </mat-form-field>
                 </div>
             </div>
@@ -33,13 +33,13 @@
             <div class="row m-3">
                 <div class="col">
                     <mat-form-field class="w-100" appearance="outline">
-                        <mat-label>Gender</mat-label>
-                        <mat-select>
+                        <mat-label i18n>Gender</mat-label>
+                        <mat-select i18n i18n-placeholder placeholder="Gender" formControlName="gender">
                             <mat-option value="male">Male</mat-option>
                             <mat-option value="female">Female</mat-option>
                             <mat-option value="other">other</mat-option>
                         </mat-select>
-                         <mat-error *ngIf="gender?.errors?.invalid">Gender is a required.</mat-error>
+                         <mat-error i18n *ngIf="gender?.errors?.invalid">Gender is a required.</mat-error>
                     </mat-form-field>
                 </div>
             </div>
@@ -50,7 +50,12 @@
                 </div>
             </div>
 
-
+            ma
+            <div class="row">
+                <div class="col">
+                    {{ cForm.value | json}}
+                </div>
+            </div>
         </form>
     </mat-card>
 </div>
