@@ -4,6 +4,14 @@
   "newProjectRoot": "projects",
   "projects": {
     "ContactFormI18N": {
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "en": "src/assets/translate/messages.en.xlf",
+          "es": "src/assets/translate/messages.es.xlf",
+          "fr": "src/assets/translate/messages.fr.xlf"
+        }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,6 +28,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize":true,
             "outputPath": "dist/ContactFormI18N",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -38,6 +47,21 @@
             "scripts": []
           },
           "configurations": {
+            "en": {
+              "localize": [
+                "en"
+              ]
+            },
+            "fr": {
+              "localize": [
+                "fr"
+              ]
+            },
+            "es": {
+              "localize": [
+                "es"
+              ]
+            },
             "production": {
               "budgets": [
                 {
@@ -75,6 +99,15 @@
           "configurations": {
             "production": {
               "browserTarget": "ContactFormI18N:build:production"
+            },
+            "en": {
+              "browserTarget": "ContactFormI18N:build:en"
+            },
+            "es": {
+              "browserTarget": "ContactFormI18N:build:es"
+            },
+            "fr": {
+              "browserTarget": "ContactFormI18N:build:fr"
             },
             "development": {
               "browserTarget": "ContactFormI18N:build:development"
